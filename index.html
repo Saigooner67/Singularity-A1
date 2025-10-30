@@ -5,53 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mars Weather Dashboard</title>
   <style>
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background-color: #0b0c10;
-      color: #c5c6c7;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-    .container {
-      text-align: center;
-      background-color: #1f2833;
-      padding: 2rem 2.5rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-      max-width: 420px;
-    }
-    h1 {
-      color: #66fcf1;
-      font-size: 1.8rem;
-      margin-bottom: 1.2rem;
-    }
-    .card {
-      background-color: #0b0c10;
-      border: 1px solid #45a29e;
-      border-radius: 8px;
-      padding: 1rem;
-      margin-top: 1rem;
-    }
-    .card h2 {
-      color: #45a29e;
-      margin: 0.2rem 0 0.6rem 0;
-    }
-    p {
-      margin: 0.3rem 0;
-      font-size: 0.95rem;
-    }
-    footer {
-      margin-top: 1.5rem;
-      font-size: 0.8rem;
-      color: #888;
-    }
-    .error {
-      color: #ff5555;
-      font-weight: bold;
-    }
+    body { font-family: 'Inter', sans-serif; background: #0b0c10; color: #c5c6c7; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+    .container { text-align: center; background: #1f2833; padding: 2rem 2.5rem; border-radius: 12px; max-width: 400px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+    h1 { color: #66fcf1; margin-bottom: 1rem; }
+    .card { background: #0b0c10; border: 1px solid #45a29e; border-radius: 8px; padding: 1rem; margin-top: 1rem; }
+    .card h2 { color: #45a29e; margin: 0.2rem 0 0.6rem 0; }
+    p { margin: 0.3rem 0; font-size: 0.95rem; }
+    footer { margin-top: 1rem; font-size: 0.8rem; color: #888; }
+    .error { color: #ff5555; font-weight: bold; }
   </style>
 </head>
 <body>
@@ -70,8 +31,7 @@
       </div>
     {% endif %}
 
-    <footer>Data provided by NASA’s InSight Lander API</footer>
+    <footer>Data provided by NASA InSight Lander API</footer>
   </div>
 </body>
 </html>
-
