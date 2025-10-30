@@ -1,62 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Space & Earth Observation Project</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mars Weather Dashboard</title>
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #0b0c10;
+      color: #c5c6c7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      text-align: center;
+      background-color: #1f2833;
+      padding: 2rem 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      max-width: 420px;
+    }
+    h1 {
+      color: #66fcf1;
+      font-size: 1.8rem;
+      margin-bottom: 1.2rem;
+    }
+    .card {
+      background-color: #0b0c10;
+      border: 1px solid #45a29e;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-top: 1rem;
+    }
+    .card h2 {
+      color: #45a29e;
+      margin: 0.2rem 0 0.6rem 0;
+    }
+    p {
+      margin: 0.3rem 0;
+      font-size: 0.95rem;
+    }
+    footer {
+      margin-top: 1.5rem;
+      font-size: 0.8rem;
+      color: #888;
+    }
+    .error {
+      color: #ff5555;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Exploring Earth from Space</h1>
-    <p>A School Project on Satellite Data and Environmental Observation</p>
-  </header>
+  <div class="container">
+    <h1>🔴 Mars Weather Dashboard</h1>
 
-  <main>
-    <section>
-      <h2>About This Project</h2>
-      <p>
-        This website is part of my school computer project about how satellites help us
-        study our planet. Using satellite imagery and physics principles,
-        scientists can measure things like vegetation health, water levels,
-        and land changes over time.
-      </p>
-      <p>
-        My goal with this project is to learn how space technology and computer
-        science work together to observe and protect Earth.
-      </p>
-    </section>
+    {% if weather.error %}
+      <p class="error">{{ weather.error }}</p>
+    {% else %}
+      <div class="card">
+        <h2>Sol {{ weather.sol }}</h2>
+        <p><strong>Season:</strong> {{ weather.season }}</p>
+        <p><strong>Temperature:</strong> {{ weather.temperature }} °C</p>
+        <p><strong>Pressure:</strong> {{ weather.pressure }} Pa</p>
+        <p><strong>Wind Speed:</strong> {{ weather.wind }} m/s</p>
+      </div>
+    {% endif %}
 
-    <section>
-      <h2>What You'll Find Here</h2>
-      <ul>
-        <li>🛰️ Information about how satellites collect data</li>
-        <li>🌿 Examples of environmental monitoring using images</li>
-        <li>💻 Future plans for data visualization and analysis</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Why It Matters</h2>
-      <p>
-        Space-based observation plays a key role in understanding climate change,
-        deforestation, and the health of our planet. Projects like this one
-        help build awareness of how technology can be used for good.
-      </p>
-    </section>
-
-    <section>
-      <h2>Next Steps</h2>
-      <p>
-        In future updates, this site will include example satellite images,
-        NDVI calculations, and simple data visualizations created with Python
-        or web tools.
-      </p>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 [Your Name] — School Project | Hosted on GitHub Pages</p>
-  </footer>
+    <footer>Data provided by NASA’s InSight Lander API</footer>
+  </div>
 </body>
 </html>
